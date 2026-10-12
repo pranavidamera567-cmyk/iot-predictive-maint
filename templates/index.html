@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IoT Predictive Maintenance</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; background: #f4f6f8; color: #1d2733; }
+  header { background: #1d2733; color: #fff; padding: 14px 24px; }
+  main { padding: 20px 24px; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); }
+  .card { background: #fff; border-radius: 8px; padding: 16px; box-shadow: 0 1px 3px #0002; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  td, th { padding: 6px; text-align: left; border-bottom: 1px solid #eee; }
+  tr.row { cursor: pointer; } tr.row:hover { background: #f0f4f8; }
+  .alert { color: #c0392b; font-weight: 600; } .ok { color: #2e8b57; }
+</style>
+</head>
+<body>
+<header><h2 style="margin:0">Predictive Maintenance Dashboard</h2><small id="metrics"></small></header>
+<main>
+  <section class="card"><h3>Asset condition</h3>
+    <table id="assets"><thead><tr><th>Asset</th><th>Temp °C</th><th>Vib</th><th>Risk</th><th>Status</th></tr></thead><tbody></tbody></table></section>
+  <section class="card"><h3>Active alerts</h3><ul id="alerts"></ul></section>
+  <section class="card"><h3 id="tsTitle">Temperature &amp; vibration</h3><canvas id="ts"></canvas></section>
+  <section class="card"><h3>Failure risk</h3><canvas id="risk"></canvas></section>
+  <section class="card"><h3>Maintenance events per month</h3><canvas id="mMonth"></canvas></section>
+  <section class="card"><h3>Maintenance cost by type</h3><canvas id="mType"></canvas></section>
+</main>
+<script src="/static/dashboard.js"></script>
+</body>
+</html>
